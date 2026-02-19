@@ -1644,9 +1644,6 @@ html:not([data-theme="dark"]) .theme-toggle-label-dark,
     font-weight: 500;
   }
 
-  .nav-mobile .nav-link .lang-content {
-    display: inline;
-  }
 
   .nav-mobile .nav-link:last-child {
     border-bottom: none;
@@ -1687,6 +1684,12 @@ html:not([data-theme="dark"]) .theme-toggle-label-dark,
     gap: var(--space-xs);
     flex-wrap: wrap;
     justify-content: flex-end;
+  }
+
+  .btn-header-cta {
+    padding: 6px var(--space-sm);
+    font-size: 0.8125rem;
+    font-weight: 600;
   }
 
   .theme-toggle {
@@ -1738,27 +1741,28 @@ html:not([data-theme="dark"]) .theme-toggle-label-dark,
   .hero-content {
     grid-template-columns: 1fr;
     gap: var(--space-lg);
-    text-align: center;
+    text-align: start;
   }
 
   .hero-text {
-    text-align: center;
+    text-align: start;
   }
 
   .hero-text .hero-pill {
-    margin-inline: auto;
+    margin-inline: 0;
+    margin-inline-end: auto;
   }
 
   .hero-text .hero-title {
-    text-align: center;
+    text-align: start;
   }
 
   .hero-text .hero-sub {
-    text-align: center;
+    text-align: start;
   }
 
   .hero-text .hero-cta {
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .price-demo {

@@ -5,7 +5,7 @@
   var langButtons = document.querySelectorAll('.lang-btn');
   var langContents = document.querySelectorAll('.lang-content');
 
-  // Theme: init from localStorage or system preference
+  // Theme: init from localStorage, default light
   var themeToggle = document.getElementById('theme-toggle');
   var THEME_KEY = 'hasm-theme';
   function getStoredTheme() {
@@ -37,11 +37,7 @@
       setTheme(stored);
       return;
     }
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setTheme('dark');
-    } else {
-      setTheme('light');
-    }
+    setTheme('light');
   }
   initTheme();
   if (themeToggle) {
