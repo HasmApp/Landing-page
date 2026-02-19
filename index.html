@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="html-root">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Hasm | حسم</title>
+  <meta name="description" content="Live prices. Your timing. Your control." />
+  <link rel="icon" type="image/png" href="assets/Logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo-link">
+        <img src="assets/Logo.png" alt="Hasm حسم" class="logo-img logo-img-header" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';" />
+        <span class="logo-fallback">Hasm <span class="logo-ar">حسم</span></span>
+      </a>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-menu"></button>
+      <nav class="nav nav-desktop" aria-label="Main">
+        <a href="#how-it-works" class="nav-link nav-link-accent"><span class="lang-content" data-lang="en">How it works</span><span class="lang-content" data-lang="ar">كيف يعمل</span></a>
+        <a href="#demo" class="nav-link"><span class="lang-content" data-lang="en">Live demo</span><span class="lang-content" data-lang="ar">عرض حي</span></a>
+        <a href="#features" class="nav-link"><span class="lang-content" data-lang="en">What you get</span><span class="lang-content" data-lang="ar">ما الذي تحصل عليه</span></a>
+      </nav>
+      <div class="header-actions">
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode" title="Switch to dark mode">
+          <span class="theme-toggle-label theme-toggle-label-light"><span class="lang-content" data-lang="en">Dark</span><span class="lang-content" data-lang="ar">داكن</span></span>
+          <span class="theme-toggle-label theme-toggle-label-dark"><span class="lang-content" data-lang="en">Light</span><span class="lang-content" data-lang="ar">فاتح</span></span>
+        </button>
+        <div class="lang-toggle" dir="ltr">
+          <button type="button" class="lang-btn" data-lang="en" aria-label="English">EN</button>
+          <span class="lang-divider">|</span>
+          <button type="button" class="lang-btn active" data-lang="ar" aria-label="العربية">ع</button>
+        </div>
+        <a href="#cta" class="btn btn-header-cta"><span class="lang-content" data-lang="en">Download</span><span class="lang-content" data-lang="ar">تحميل</span></a>
+      </div>
+    </div>
+  </header>
+  <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true" hidden></div>
+  <nav class="nav nav-mobile" id="nav-menu" aria-label="Main">
+    <a href="#how-it-works" class="nav-link nav-link-accent"><span class="lang-content" data-lang="en">How it works</span><span class="lang-content" data-lang="ar">كيف يعمل</span></a>
+    <a href="#demo" class="nav-link"><span class="lang-content" data-lang="en">Live demo</span><span class="lang-content" data-lang="ar">عرض حي</span></a>
+    <a href="#features" class="nav-link"><span class="lang-content" data-lang="en">What you get</span><span class="lang-content" data-lang="ar">ما الذي تحصل عليه</span></a>
+  </nav>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-content" id="demo">
+          <div class="hero-text">
+            <p class="hero-pill" role="status">
+              <span class="hero-pill-dot" aria-hidden="true">•</span>
+              <span class="lang-content" data-lang="en">Smart descending-price marketplace</span>
+              <span class="lang-content" data-lang="ar">سوق أسعار تنازلية ذكي</span>
+            </p>
+            <h1 class="hero-title">
+              <span class="lang-content" data-lang="en">The price drops over time—secure it before stock runs out.</span>
+              <span class="lang-content" data-lang="ar">السعر يتناقص مع الوقت، احسمها قبل نفاد الكمية</span>
+            </h1>
+            <p class="hero-sub">
+              <span class="lang-content" data-lang="en">Hasm uses a time-based variable pricing model—giving buyers better value and boosting product movement.</span>
+              <span class="lang-content" data-lang="ar">حسم يعتمد نموذج تسعير متغير بمرور الوقت، ليمنح المشترين قيمة أفضل ويعزز حركة المنتجات.</span>
+            </p>
+            <div class="hero-cta">
+              <a href="#" class="btn btn-primary"><span class="lang-content" data-lang="en">Join the waitlist</span><span class="lang-content" data-lang="ar">انضم للقائمة</span></a>
+              <a href="#how-it-works" class="btn btn-ghost-hero"><span class="lang-content" data-lang="en">See how it works</span><span class="lang-content" data-lang="ar">شاهد كيف يعمل</span></a>
+            </div>
+          </div>
+          <div class="price-demo">
+            <div class="price-demo-card">
+              <div class="price-demo-content">
+                <span class="price-demo-live-pill">
+                  <span class="price-demo-live-check" aria-hidden="true">✓</span>
+                  <span class="lang-content" data-lang="en">Live demo</span>
+                  <span class="lang-content" data-lang="ar">عرض حي</span>
+                </span>
+                <div class="price-demo-value-wrap">
+                  <span class="price-with-currency">
+                    <img src="assets/Saudi_riyal.svg" alt="" class="currency-symbol" aria-hidden="true" />
+                    <span class="price-demo-value" id="live-price">239</span>
+                  </span>
+                  <span class="price-demo-original" id="live-price-original">239</span>
+                </div>
+                <p class="price-demo-next" aria-live="polite">
+                  <span class="lang-content" data-lang="en">Next drop in</span><span class="lang-content" data-lang="ar">التنزيل التالي خلال</span>
+                  <strong class="price-demo-countdown" id="next-drop-timer">3s</strong>
+                </p>
+                <div class="price-demo-progress" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                  <div class="price-demo-progress-fill" id="next-drop-progress"></div>
+                </div>
+                <p class="price-demo-tagline">
+                  <span class="lang-content" data-lang="en">Price drops over time. Buy when it suits you.</span>
+                  <span class="lang-content" data-lang="ar">السعر ينزل مع الوقت. اشتري وقت ما يناسبك.</span>
+                </p>
+              </div>
+            </div>
+            <div class="hero-stores store-badges store-badges-under-demo">
+              <a href="https://apps.apple.com/app/idXXXXXXXX" class="store-badge store-badge-apple" target="_blank" rel="noopener" aria-label="Download on the App Store">
+                <span class="store-badge-icon store-badge-icon-apple" aria-hidden="true"></span>
+                <span class="store-badge-text"><span class="store-badge-label"><span class="lang-content" data-lang="en">Download on the</span><span class="lang-content" data-lang="ar">تحميل من</span></span> <span class="store-badge-name">App Store</span></span>
+              </a>
+              <a href="https://play.google.com/store/apps/details?id=com.hasm.app" class="store-badge store-badge-google" target="_blank" rel="noopener" aria-label="Get it on Google Play">
+                <span class="store-badge-icon store-badge-icon-google" aria-hidden="true"></span>
+                <span class="store-badge-text"><span class="store-badge-label"><span class="lang-content" data-lang="en">Get it on</span><span class="lang-content" data-lang="ar">احصل عليه من</span></span> <span class="store-badge-name">Google Play</span></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT IS HASM -->
+    <section class="section section-intro" id="about">
+      <div class="container">
+        <h2 class="block-title scroll-animate">
+          <span class="lang-content" data-lang="en">What is Hasm</span>
+          <span class="lang-content" data-lang="ar">ما هو حسم</span>
+        </h2>
+        <p class="block-lead scroll-animate" data-delay="1">
+          <span class="lang-content" data-lang="en">Prices move in real time. Watch them drop, bid in auctions, or set a target and get notified. Buy by unit or take the full stock.</span>
+          <span class="lang-content" data-lang="ar">أسعار تتحرك لحظياً. تابع النزول، ادخل مزادات، أو حدد سعرك وانتظر التنبيه. شراء بالحبة أو خذ الكمية كاملة.</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- TWO SELLING MODELS -->
+    <section class="section section-models" id="models">
+      <div class="container">
+        <h2 class="block-title scroll-animate">
+          <span class="lang-content" data-lang="en">Two ways to buy</span>
+          <span class="lang-content" data-lang="ar">طريقتان للشراء</span>
+        </h2>
+        <p class="block-lead scroll-animate" data-delay="1">
+          <span class="lang-content" data-lang="en">By unit at current price, or take the full stock.</span>
+          <span class="lang-content" data-lang="ar">بالحبة على السعر الحالي، أو خذ الكمية كاملة.</span>
+        </p>
+        <div class="models-row models-row-orion">
+          <div class="model-card model-card-dark scroll-animate" data-delay="1">
+            <span class="model-card-icon model-card-icon-price" aria-hidden="true"></span>
+            <h3 class="model-card-title">
+              <span class="lang-content" data-lang="en">Buy by unit</span>
+              <span class="lang-content" data-lang="ar">شراء بالحبة</span>
+            </h3>
+            <p class="model-card-desc">
+              <span class="lang-content" data-lang="en">Buy one or more at the current price. Choose the moment that suits you.</span>
+              <span class="lang-content" data-lang="ar">اشترِ وحدة أو أكثر بالسعر الحالي، اختر اللحظة التي تناسبك.</span>
+            </p>
+          </div>
+          <div class="model-card model-card-dark scroll-animate" data-delay="2">
+            <span class="model-card-icon model-card-icon-stock" aria-hidden="true"></span>
+            <h3 class="model-card-title">
+              <span class="lang-content" data-lang="en">Buy full stock</span>
+              <span class="lang-content" data-lang="ar">شراء الكمية كاملة</span>
+            </h3>
+            <p class="model-card-desc">
+              <span class="lang-content" data-lang="en">Take the entire listing at once. One price for the full lot—a good option for those who want to take advantage of the full offer.</span>
+              <span class="lang-content" data-lang="ar">خذ العرض كاملاً دفعة واحدة. سعر واحد للكمية كاملة، خيار مناسب لمن يرغب بالاستفادة من كامل العرض.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES — ما الذي تحصل عليه -->
+    <section class="section section-features" id="features">
+      <div class="container">
+        <div class="features-layout">
+          <div class="features-intro">
+            <h2 class="block-title scroll-animate">
+              <span class="lang-content" data-lang="en">What you get</span>
+              <span class="lang-content" data-lang="ar">ما الذي تحصل عليه</span>
+            </h2>
+            <p class="block-lead scroll-animate" data-delay="1">
+              <span class="lang-content" data-lang="en">Live prices, auctions, price alerts, secure checkout. By unit or full stock.</span>
+              <span class="lang-content" data-lang="ar">أسعار حية، مزادات، تنبيهات سعر، دفع آمن. بالحبة أو الكمية كاملة.</span>
+            </p>
+          </div>
+          <div class="get-card get-card-large scroll-animate" data-delay="2">
+            <span class="get-card-icon get-card-icon-alerts" aria-hidden="true"></span>
+            <h3 class="get-card-title"><span class="lang-content" data-lang="en">Target price alerts</span><span class="lang-content" data-lang="ar">تنبيهات السعر المستهدف</span></h3>
+            <p class="get-card-desc"><span class="lang-content" data-lang="en">Set a price. We notify you when it's reached.</span><span class="lang-content" data-lang="ar">حدد سعر. نبلغك عند الوصول.</span></p>
+          </div>
+        </div>
+        <div class="features-cards-row">
+          <div class="get-card scroll-animate" data-delay="3">
+            <span class="get-card-icon get-card-icon-prices" aria-hidden="true"></span>
+            <h3 class="get-card-title"><span class="lang-content" data-lang="en">Live prices</span><span class="lang-content" data-lang="ar">أسعار حية</span></h3>
+            <p class="get-card-desc"><span class="lang-content" data-lang="en">Prices update live. Buy when it suits you.</span><span class="lang-content" data-lang="ar">الأسعار تتغير لحظيًا. اشترِ في الوقت الذي يناسبك.</span></p>
+          </div>
+          <div class="get-card scroll-animate" data-delay="4">
+            <span class="get-card-icon get-card-icon-auctions" aria-hidden="true"></span>
+            <h3 class="get-card-title"><span class="lang-content" data-lang="en">Live auctions</span><span class="lang-content" data-lang="ar">مزادات حية</span></h3>
+            <p class="get-card-desc"><span class="lang-content" data-lang="en">Bid live. Highest bid wins.</span><span class="lang-content" data-lang="ar">مزايدة حية. أعلى مزايدة تربح.</span></p>
+          </div>
+          <div class="get-card scroll-animate" data-delay="5">
+            <span class="get-card-icon get-card-icon-secure" aria-hidden="true"></span>
+            <h3 class="get-card-title"><span class="lang-content" data-lang="en">Secure checkout</span><span class="lang-content" data-lang="ar">دفع آمن</span></h3>
+            <p class="get-card-desc"><span class="lang-content" data-lang="en">Safe payments. Verified sellers.</span><span class="lang-content" data-lang="ar">دفع آمن. بائعون موثقون.</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section section-steps" id="how-it-works">
+      <div class="container">
+        <h2 class="block-title scroll-animate">
+          <span class="lang-content" data-lang="en">How it works</span>
+          <span class="lang-content" data-lang="ar">كيف يعمل</span>
+        </h2>
+        <div class="steps">
+          <div class="step scroll-animate" data-delay="1">
+            <span class="step-dot">1</span>
+            <h3 class="step-title">
+              <span class="lang-content" data-lang="en">Watch</span>
+              <span class="lang-content" data-lang="ar">شاهد</span>
+            </h3>
+            <p class="step-text">
+              <span class="lang-content" data-lang="en">Prices update live.</span>
+              <span class="lang-content" data-lang="ar">الأسعار تتحدث لحظياً.</span>
+            </p>
+          </div>
+          <div class="step scroll-animate" data-delay="2">
+            <span class="step-dot">2</span>
+            <h3 class="step-title">
+              <span class="lang-content" data-lang="en">Decide</span>
+              <span class="lang-content" data-lang="ar">قرّر</span>
+            </h3>
+            <p class="step-text">
+              <span class="lang-content" data-lang="en">Buy now or set a target price.</span>
+              <span class="lang-content" data-lang="ar">اشتري الآن أو حدد سعرك المستهدف.</span>
+            </p>
+          </div>
+          <div class="step scroll-animate" data-delay="3">
+            <span class="step-dot">3</span>
+            <h3 class="step-title">
+              <span class="lang-content" data-lang="en">Secure</span>
+              <span class="lang-content" data-lang="ar">أكد</span>
+            </h3>
+            <p class="step-text">
+              <span class="lang-content" data-lang="en">Checkout safe and verified.</span>
+              <span class="lang-content" data-lang="ar">دفع آمن وموثوق.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LIVE AUCTION DEMO -->
+    <section class="section section-auction" id="auction">
+      <div class="container">
+        <h2 class="block-title scroll-animate">
+          <span class="lang-content" data-lang="en">Live auction</span>
+          <span class="lang-content" data-lang="ar">مزاد حي</span>
+        </h2>
+        <p class="block-lead scroll-animate" data-delay="1">
+          <span class="lang-content" data-lang="en">Bid live. Highest bid when time's up wins.</span>
+          <span class="lang-content" data-lang="ar">مزايدة حية. أعلى مزايدة عند الإغلاق تربح.</span>
+        </p>
+        <div class="auction-demo scroll-animate" data-delay="2">
+          <div class="auction-demo-card">
+            <div class="auction-demo-content">
+              <span class="auction-demo-live-pill">
+                <span class="auction-demo-live-check" aria-hidden="true">✓</span>
+                <span class="lang-content" data-lang="en">Live auction</span>
+                <span class="lang-content" data-lang="ar">مزاد حي</span>
+              </span>
+              <p class="auction-demo-name"><span class="lang-content" data-lang="en">Limited Edition Watch</span><span class="lang-content" data-lang="ar">ساعة إصدار محدود</span></p>
+              <div class="auction-demo-timer-wrap">
+                <span class="auction-demo-timer" id="auction-timer">03:00</span>
+                <span class="auction-demo-timer-label"><span class="lang-content" data-lang="en">left</span><span class="lang-content" data-lang="ar">متبقي</span></span>
+              </div>
+              <div class="auction-demo-progress" role="progressbar" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100">
+                <div class="auction-demo-progress-fill" id="auction-progress"></div>
+              </div>
+              <div class="auction-demo-bid">
+                <span class="auction-demo-bid-label"><span class="lang-content" data-lang="en">High bid</span><span class="lang-content" data-lang="ar">أعلى مزايدة</span></span>
+                <span class="price-with-currency">
+                  <img src="assets/Saudi_riyal.svg" alt="" class="currency-symbol" aria-hidden="true" />
+                  <span class="auction-demo-bid-value">1,250</span>
+                </span>
+              </div>
+              <p class="auction-demo-tagline">
+                <span class="lang-content" data-lang="en">Bid live. Highest bid when time's up wins.</span>
+                <span class="lang-content" data-lang="ar">مزايدة حية. أعلى مزايدة عند الإغلاق تربح.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="section section-cta" id="cta">
+      <div class="container">
+        <h2 class="cta-title scroll-animate">
+          <span class="lang-content" data-lang="en">Download Hasm</span>
+          <span class="lang-content" data-lang="ar">حمّل حسم</span>
+        </h2>
+        <p class="cta-lead scroll-animate" data-delay="1">
+          <span class="lang-content" data-lang="en">Interested? Leave your phone number and we’ll get in touch.</span>
+          <span class="lang-content" data-lang="ar">مهتم؟ اترك رقم هاتفك وسنتواصل معك.</span>
+        </p>
+        <form class="cta-form scroll-animate" id="cta-phone-form" action="https://formsubmit.co/info@hasm.io" method="POST" data-delay="1" novalidate aria-label="Join waitlist">
+          <input type="hidden" name="_next" value="/" />
+          <input type="hidden" name="_subject" value="New Hasm waitlist signup" />
+          <input type="tel" name="phone" class="cta-form-input" placeholder="+966 5X XXX XXXX" required aria-label="Phone number" />
+          <button type="submit" class="btn btn-primary cta-form-btn">
+            <span class="lang-content" data-lang="en">Send</span>
+            <span class="lang-content" data-lang="ar">إرسال</span>
+          </button>
+        </form>
+        <div class="store-badges scroll-animate" data-delay="2">
+          <a href="https://apps.apple.com/app/idXXXXXXXX" class="store-badge store-badge-apple" target="_blank" rel="noopener" aria-label="Download on the App Store">
+            <span class="store-badge-icon store-badge-icon-apple" aria-hidden="true"></span>
+            <span class="store-badge-text"><span class="store-badge-label"><span class="lang-content" data-lang="en">Download on the</span><span class="lang-content" data-lang="ar">تحميل من</span></span> <span class="store-badge-name">App Store</span></span>
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=com.hasm.app" class="store-badge store-badge-google" target="_blank" rel="noopener" aria-label="Get it on Google Play">
+            <span class="store-badge-icon store-badge-icon-google" aria-hidden="true"></span>
+            <span class="store-badge-text"><span class="store-badge-label"><span class="lang-content" data-lang="en">Get it on</span><span class="lang-content" data-lang="ar">احصل عليه من</span></span> <span class="store-badge-name">Google Play</span></span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" dir="ltr">
+    <div class="container footer-inner">
+      <a href="#" class="logo-link logo-link-footer">
+        <img src="assets/Logo.png" alt="Hasm حسم" class="logo-img logo-img-footer" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';" />
+        <span class="logo-fallback">Hasm <span class="logo-ar">حسم</span></span>
+      </a>
+      <a href="mailto:info@hasm.io">info@hasm.io</a>
+      <a href="tel:+966502925742">+966 50 292 5742</a>
+      <p class="footer-copy">© <span id="year"></span> Hasm</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

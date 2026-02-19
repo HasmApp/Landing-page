@@ -1,0 +1,36 @@
+---
+description: Use FormSubmit.co for waitlist and contact forms
+globs: "**/*.html"
+alwaysApply: false
+---
+
+# Waitlist / Contact Forms with FormSubmit
+
+Use FormSubmit.co for email-backed forms (waitlist, contact, phone signup). No backend required.
+
+## Pattern
+
+- **action**: `https://formsubmit.co/info@hasm.io`
+- **method**: `POST`
+- **Hidden fields**: `_next` (redirect URL after submit), `_subject` (email subject).
+
+## Example
+
+```html
+<form id="waitlistForm" action="https://formsubmit.co/info@hasm.io" method="POST" aria-label="Join waitlist">
+  <input type="hidden" name="_next" value="/" />
+  <input type="hidden" name="_subject" value="New Hasm waitlist signup" />
+  <input type="tel" name="phone" placeholder="+966 5X XXX XXXX" required aria-label="Phone number" />
+  <button type="submit">Send</button>
+</form>
+```
+
+## JS
+
+- Do **not** `preventDefault()` on submit when the form is valid; let it POST to FormSubmit.
+- Only prevent submit when validation fails (e.g. empty required field) and call `input.focus()`.
+
+## Notes
+
+- Replace `_next` with a full URL (e.g. your deployed site) for redirect after submit.
+- FormSubmit sends the form fields to the email in the action URL.
