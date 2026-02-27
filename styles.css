@@ -797,6 +797,18 @@ html:not([data-theme="dark"]) .theme-toggle-label-dark,
   margin-inline: auto;
 }
 
+/* Single card in models section: centered and wider */
+.section-models .models-row {
+  grid-template-columns: 1fr;
+  max-width: 720px;
+  justify-items: center;
+}
+
+.section-models .model-card {
+  width: 100%;
+  max-width: 640px;
+}
+
 /* Orion-style: large rounded card with visual area + tag + bold headline */
 .model-card-orion {
   background: var(--bg-card);
