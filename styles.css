@@ -788,6 +788,11 @@ html:not([data-theme="dark"]) .theme-toggle-label-dark,
   background: var(--bg);
 }
 
+/* Slightly wider intro text in models section */
+.section-models .block-lead {
+  max-width: 580px;
+}
+
 .models-row {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -800,13 +805,13 @@ html:not([data-theme="dark"]) .theme-toggle-label-dark,
 /* Single card in models section: centered and wider */
 .section-models .models-row {
   grid-template-columns: 1fr;
-  max-width: 720px;
+  max-width: 800px;
   justify-items: center;
 }
 
 .section-models .model-card {
   width: 100%;
-  max-width: 640px;
+  max-width: 720px;
 }
 
 /* Orion-style: large rounded card with visual area + tag + bold headline */
