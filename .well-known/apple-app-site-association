@@ -3,7 +3,7 @@
     "apps": [],
     "details": [
       {
-        "appIDs": ["6756539653.com.hasm.app"],
+        "appIDs": ["M2AWGKCZ3H.com.hasm.app"],
         "paths": ["/share/product.html", "/share/*", "/product/*"]
       }
     ]
