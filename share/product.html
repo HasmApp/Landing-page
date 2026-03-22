@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-itunes-app" content="app-id=6756539653" />
+  <title>Hasm — product</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 0; padding: 24px; max-width: 420px; margin-inline: auto; }
+    h1 { font-size: 1.25rem; }
+    p { color: #444; line-height: 1.5; }
+    a.button {
+      display: block; text-align: center; padding: 14px 18px; margin: 10px 0;
+      background: #111; color: #fff; text-decoration: none; border-radius: 10px; font-weight: 600;
+    }
+    a.secondary { background: #eee; color: #111; }
+    .muted { font-size: 0.85rem; color: #666; }
+  </style>
+</head>
+<body>
+  <h1>Open in Hasm</h1>
+  <p id="desc">Install the Hasm app to view this product. If you already have the app, open the link again from Messages or Safari.</p>
+  <a class="button" id="ios" href="https://apps.apple.com/app/id6756539653">Download on the App Store</a>
+  <a class="button secondary" id="android" href="https://play.google.com/store/apps/details?id=com.hasm.app">Get it on Google Play</a>
+  <p class="muted" id="pid"></p>
+  <script>
+    (function () {
+      var q = new URLSearchParams(window.location.search);
+      var id = q.get('id') || q.get('product_id');
+      if (id) {
+        document.getElementById('pid').textContent = 'Product ID: ' + id;
+      }
+    })();
+  </script>
+</body>
+</html>
