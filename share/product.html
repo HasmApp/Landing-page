@@ -14,19 +14,14 @@
       background: #111; color: #fff; text-decoration: none; border-radius: 10px; font-weight: 600;
     }
     a.secondary { background: #eee; color: #111; }
-    .muted { font-size: 0.85rem; color: #666; }
-    .hint { font-size: 0.9rem; color: #555; margin-top: 16px; }
   </style>
 </head>
 <body>
   <h1>Hasm</h1>
   <p id="desc">View this product in the Hasm app, or install the app first.</p>
-  <!-- Do NOT auto-open hasm:// (Safari shows "invalid address" for iframe/window loads). Tap only. -->
   <a class="button" id="openApp" href="#">Open in Hasm</a>
   <a class="button secondary" id="iosStore" href="https://apps.apple.com/app/id6756539653">Download on the App Store</a>
   <a class="button secondary" id="androidStore" href="https://play.google.com/store/apps/details?id=com.hasm.app">Get it on Google Play</a>
-  <p class="muted" id="pid"></p>
-  <p class="hint" id="hint"></p>
   <script>
     (function () {
       var q = new URLSearchParams(window.location.search);
@@ -38,13 +33,8 @@
         return;
       }
 
-      document.getElementById('pid').textContent = 'Product ID: ' + id;
       var appUrl = 'hasm://display_product?product_id=' + encodeURIComponent(id);
       document.getElementById('openApp').href = appUrl;
-
-      document.getElementById('hint').textContent =
-        'Tip: Opening the same link from Messages or WhatsApp usually jumps straight into the app (Universal Link). ' +
-        'If you opened it in Safari, use the buttons above.';
     })();
   </script>
 </body>
