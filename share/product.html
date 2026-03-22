@@ -18,18 +18,73 @@
   </style>
 </head>
 <body>
-  <h1>Open in Hasm</h1>
-  <p id="desc">Install the Hasm app to view this product. If you already have the app, open the link again from Messages or Safari.</p>
-  <a class="button" id="ios" href="https://apps.apple.com/app/id6756539653">Download on the App Store</a>
-  <a class="button secondary" id="android" href="https://play.google.com/store/apps/details?id=com.hasm.app">Get it on Google Play</a>
+  <h1 id="title">Hasm</h1>
+  <p id="desc">Trying to open this product in the app…</p>
+  <a class="button" id="openApp" href="#">Open in app</a>
+  <a class="button secondary" id="iosStore" href="https://apps.apple.com/app/id6756539653">Download on the App Store</a>
+  <a class="button secondary" id="androidStore" href="https://play.google.com/store/apps/details?id=com.hasm.app">Get it on Google Play</a>
   <p class="muted" id="pid"></p>
   <script>
     (function () {
       var q = new URLSearchParams(window.location.search);
       var id = q.get('id') || q.get('product_id');
-      if (id) {
-        document.getElementById('pid').textContent = 'Product ID: ' + id;
+      var appStoreUrl = 'https://apps.apple.com/app/id6756539653';
+
+      function isIOS() {
+        return /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+          (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
       }
+
+      if (!id) {
+        document.getElementById('desc').textContent = 'Missing product link.';
+        document.getElementById('openApp').style.display = 'none';
+        return;
+      }
+
+      document.getElementById('pid').textContent = 'Product ID: ' + id;
+      var appUrl = 'hasm://display_product?product_id=' + encodeURIComponent(id);
+
+      function tryOpenApp() {
+        // Hidden iframe opens the registered URL scheme without leaving this page (so we can fall back to App Store).
+        var iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        iframe.src = appUrl;
+        document.body.appendChild(iframe);
+        setTimeout(function () {
+          try {
+            document.body.removeChild(iframe);
+          } catch (e) {}
+        }, 2000);
+      }
+
+      document.getElementById('openApp').href = appUrl;
+
+      // iOS: if the app does not open, send user to the App Store after a short wait.
+      var storeTimer = null;
+      if (isIOS()) {
+        storeTimer = setTimeout(function () {
+          document.getElementById('desc').textContent =
+            'Get the Hasm app to view this product.';
+          window.location.href = appStoreUrl;
+        }, 3200);
+      } else {
+        document.getElementById('desc').textContent =
+          'Open the link in the Hasm app, or install from the store below.';
+      }
+
+      function clearStoreTimer() {
+        if (storeTimer) {
+          clearTimeout(storeTimer);
+          storeTimer = null;
+        }
+      }
+      window.addEventListener('pagehide', clearStoreTimer);
+      window.addEventListener('blur', clearStoreTimer);
+      document.addEventListener('visibilitychange', function () {
+        if (document.hidden) clearStoreTimer();
+      });
+
+      tryOpenApp();
     })();
   </script>
 </body>
