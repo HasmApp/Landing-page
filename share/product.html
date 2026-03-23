@@ -1,34 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-itunes-app" content="app-id=6756539653" />
-  <title>Hasm — product</title>
+  <title>Hasm — Product</title>
   <style>
-    body { font-family: system-ui, sans-serif; margin: 0; padding: 24px; max-width: 420px; margin-inline: auto; }
-    h1 { font-size: 1.25rem; }
-    p { color: #444; line-height: 1.5; }
+    body { font-family: system-ui, sans-serif; margin: 0; padding: 24px; max-width: 420px; margin-inline: auto; background: #f8fafc; }
+    .logo-wrap { display: flex; justify-content: center; margin-bottom: 14px; }
+    .logo { width: 150px; height: auto; }
+    p { color: #374151; line-height: 1.7; text-align: center; }
     a.button {
       display: block; text-align: center; padding: 14px 18px; margin: 10px 0;
       background: #111; color: #fff; text-decoration: none; border-radius: 10px; font-weight: 600;
     }
-    a.secondary { background: #eee; color: #111; }
+    .store-badges { margin-top: 12px; display: grid; gap: 10px; }
+    .store-badges a { display: block; }
+    .store-badges img { width: 100%; max-width: 220px; height: auto; display: block; margin: 0 auto; }
   </style>
 </head>
 <body>
-  <h1>Hasm</h1>
-  <p id="desc">View this product in the Hasm app, or install the app first.</p>
-  <a class="button" id="openApp" href="#">Open in Hasm</a>
-  <a class="button secondary" id="iosStore" href="https://apps.apple.com/app/id6756539653">Download on the App Store</a>
-  <a class="button secondary" id="androidStore" href="https://play.google.com/store/apps/details?id=com.hasm.app">Get it on Google Play</a>
+  <div class="logo-wrap">
+    <img class="logo" src="../assets/Logo-primary.png" alt="شعار حسم" />
+  </div>
+  <p id="desc">شاهد هذا المنتج في تطبيق حسم، أو قم بتثبيت التطبيق أولاً.</p>
+  <a class="button" id="openApp" href="#">افتح في تطبيق حسم</a>
+  <div class="store-badges">
+    <a id="iosStore" class="store-badge-image store-badge-image-apple" href="https://apps.apple.com/sa/app/hasm/id6756539653" target="_blank" rel="noopener">
+      <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="تنزيل من App Store" />
+    </a>
+    <a id="androidStore" class="store-badge-image store-badge-image-google" href="https://play.google.com/store/apps/details?id=com.hasm.app" target="_blank" rel="noopener">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="احصل عليه من Google Play" />
+    </a>
+  </div>
   <script>
     (function () {
       var q = new URLSearchParams(window.location.search);
       var id = q.get('id') || q.get('product_id');
 
       if (!id) {
-        document.getElementById('desc').textContent = 'This link is missing product information.';
+        document.getElementById('desc').textContent = 'هذا الرابط لا يحتوي على معلومات المنتج.';
         document.getElementById('openApp').style.display = 'none';
         return;
       }
