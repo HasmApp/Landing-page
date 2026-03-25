@@ -72,13 +72,10 @@
 
       window.location.replace(appUrl);
 
+      // لا تضف apple-itunes-app (شريط "OPEN" في Safari) — يكرر فتح التطبيق مع تثبيته.
       setTimeout(function () {
         if (leftForApp) return;
         shell.classList.add('show');
-        var meta = document.createElement('meta');
-        meta.name = 'apple-itunes-app';
-        meta.content = 'app-id=6756539653, app-argument=' + encodeURIComponent(window.location.href);
-        document.head.appendChild(meta);
       }, 1000);
     })();
   </script>
