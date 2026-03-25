@@ -3,10 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="apple-itunes-app" content="app-id=6756539653" />
   <title>Hasm — Product</title>
   <style>
     body { font-family: system-ui, sans-serif; margin: 0; padding: 24px; max-width: 420px; margin-inline: auto; background: #f8fafc; }
+    #shell { display: none; }
+    #shell.show { display: block; }
     .logo-wrap { display: flex; justify-content: center; margin-bottom: 14px; }
     .logo { width: 150px; height: auto; }
     p { color: #374151; line-height: 1.7; text-align: center; }
@@ -20,32 +21,65 @@
   </style>
 </head>
 <body>
-  <div class="logo-wrap">
-    <img class="logo" src="../assets/Logo-primary.png" alt="شعار حسم" />
-  </div>
-  <p id="desc">شاهد هذا المنتج في تطبيق حسم، أو قم بتثبيت التطبيق أولاً.</p>
-  <a class="button" id="openApp" href="#">افتح في تطبيق حسم</a>
-  <div class="store-badges">
-    <a id="iosStore" class="store-badge-image store-badge-image-apple" href="https://apps.apple.com/sa/app/hasm/id6756539653" target="_blank" rel="noopener">
-      <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="تنزيل من App Store" />
-    </a>
-    <a id="androidStore" class="store-badge-image store-badge-image-google" href="https://play.google.com/store/apps/details?id=com.hasm.app" target="_blank" rel="noopener">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="احصل عليه من Google Play" />
-    </a>
+  <div id="shell">
+    <div class="logo-wrap">
+      <img class="logo" src="../assets/Logo-primary.png" alt="شعار حسم" />
+    </div>
+    <p id="desc">شاهد هذا المنتج في تطبيق حسم، أو قم بتثبيت التطبيق أولاً.</p>
+    <a class="button" id="openApp" href="#">افتح في تطبيق حسم</a>
+    <div class="store-badges">
+      <a id="iosStore" class="store-badge-image store-badge-image-apple" href="https://apps.apple.com/sa/app/hasm/id6756539653" target="_blank" rel="noopener">
+        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="تنزيل من App Store" />
+      </a>
+      <a id="androidStore" class="store-badge-image store-badge-image-google" href="https://play.google.com/store/apps/details?id=com.hasm.app" target="_blank" rel="noopener">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="احصل عليه من Google Play" />
+      </a>
+    </div>
   </div>
   <script>
     (function () {
+      var shell = document.getElementById('shell');
       var q = new URLSearchParams(window.location.search);
       var id = q.get('id') || q.get('product_id');
 
       if (!id) {
         document.getElementById('desc').textContent = 'هذا الرابط لا يحتوي على معلومات المنتج.';
         document.getElementById('openApp').style.display = 'none';
+        shell.classList.add('show');
         return;
       }
 
       var appUrl = 'hasm://display_product?product_id=' + encodeURIComponent(id);
       document.getElementById('openApp').href = appUrl;
+
+      var leftForApp = false;
+      function markLeft() {
+        leftForApp = true;
+      }
+      document.addEventListener('visibilitychange', function () {
+        if (document.hidden) markLeft();
+      });
+      window.addEventListener('pagehide', markLeft);
+      window.addEventListener('blur', markLeft);
+
+      document.addEventListener('visibilitychange', function () {
+        if (!document.hidden && leftForApp) {
+          document.getElementById('desc').textContent =
+            'إذا لم يفتح التطبيق، اضغط أدناه لإعادة المحاولة أو تثبيت حسم.';
+          shell.classList.add('show');
+        }
+      });
+
+      window.location.replace(appUrl);
+
+      setTimeout(function () {
+        if (leftForApp) return;
+        shell.classList.add('show');
+        var meta = document.createElement('meta');
+        meta.name = 'apple-itunes-app';
+        meta.content = 'app-id=6756539653, app-argument=' + encodeURIComponent(window.location.href);
+        document.head.appendChild(meta);
+      }, 1000);
     })();
   </script>
 </body>
