@@ -52,31 +52,9 @@
       var appUrl = 'hasm://display_product?product_id=' + encodeURIComponent(id);
       document.getElementById('openApp').href = appUrl;
 
-      var leftForApp = false;
-      function markLeft() {
-        leftForApp = true;
-      }
-      document.addEventListener('visibilitychange', function () {
-        if (document.hidden) markLeft();
-      });
-      window.addEventListener('pagehide', markLeft);
-      window.addEventListener('blur', markLeft);
-
-      document.addEventListener('visibilitychange', function () {
-        if (!document.hidden && leftForApp) {
-          document.getElementById('desc').textContent =
-            'إذا لم يفتح التطبيق، اضغط أدناه لإعادة المحاولة أو تثبيت حسم.';
-          shell.classList.add('show');
-        }
-      });
-
-      window.location.replace(appUrl);
-
-      // لا تضف apple-itunes-app (شريط "OPEN" في Safari) — يكرر فتح التطبيق مع تثبيته.
-      setTimeout(function () {
-        if (leftForApp) return;
-        shell.classList.add('show');
-      }, 1000);
+      // Keep page passive; let Universal Links open the app directly.
+      // If app isn't installed, user can tap the button or download.
+      shell.classList.add('show');
     })();
   </script>
 </body>
