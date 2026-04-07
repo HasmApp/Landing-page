@@ -1539,6 +1539,31 @@ html:not([data-theme="dark"]) .theme-toggle-label-dark,
   text-align: center;
 }
 
+.footer-compliance {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.footer-compliance-logo {
+  width: auto;
+  height: 84px;
+  max-width: min(320px, 86vw);
+  object-fit: contain;
+}
+
+.footer-cr {
+  margin: 0;
+  font-size: var(--text-caption);
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+  text-align: center;
+  direction: rtl;
+}
+
 /* ----- Lang content visibility ----- */
 .lang-content {
   display: none;
@@ -1587,7 +1612,8 @@ html:not([data-theme="dark"]) .theme-toggle-label-dark,
 .auction-demo-tagline .lang-content.visible,
 .get-card-title .lang-content.visible,
 .get-card-desc .lang-content.visible,
-.store-badge-label .lang-content.visible {
+.store-badge-label .lang-content.visible,
+.footer-cr .lang-content.visible {
   display: inline;
 }
 
