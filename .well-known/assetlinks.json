@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.hasm.app",
+      "sha256_cert_fingerprints": [
+        "B9:CF:8E:5C:97:6C:A7:6E:7C:A7:33:A5:09:C5:34:73:B1:55:88:9D:FA:46:8E:46:06:B1:9F:6B:53:EA:3A:21"
+      ]
+    }
+  }
+]
