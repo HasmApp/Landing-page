@@ -1226,10 +1226,149 @@ html:not([data-theme="dark"]) .theme-toggle-label-dark,
   justify-content: center;
 }
 
-.store-badges-under-demo {
-  justify-content: center;
+.hero-download-group {
+  --hero-download-btn-h: 54px;
+  --hero-download-btn-gap: 10px;
+  --hero-download-btn-radius: 8px;
+  --hero-product-link-bg: #F1EEFE;
+  --hero-product-link-bg-hover: #E5E0FC;
+  --hero-product-link-text: #26215C;
+  --hero-product-link-icon: #6C47FF;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--hero-download-btn-gap);
   margin-top: var(--space-md);
   width: 100%;
+}
+
+.store-badges-under-demo {
+  justify-content: center;
+  margin-top: 0;
+  width: 100%;
+}
+
+.hero-download-group .hero-stores,
+.hero-download-group .store-badges,
+.hero-download-group .hero-product-links {
+  display: flex;
+  gap: var(--hero-download-btn-gap);
+  width: 100%;
+  flex-wrap: nowrap;
+}
+
+.hero-download-group .store-badge-image,
+.hero-download-group .hero-product-link {
+  flex: 1 1 0;
+  min-width: 0;
+  width: 0;
+  height: var(--hero-download-btn-h);
+  box-sizing: border-box;
+}
+
+.hero-download-group .store-badge-image {
+  overflow: hidden;
+  border-radius: var(--hero-download-btn-radius);
+  border: 1px solid transparent;
+}
+
+.hero-download-group .store-badge-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-download-group .store-badge-image-apple img {
+  transform: none;
+}
+
+.hero-product-links {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.hero-product-link {
+  flex: 1;
+  min-width: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: var(--hero-download-btn-h, 54px);
+  padding: 0 10px;
+  background: var(--hero-product-link-bg, #F1EEFE);
+  border: none;
+  border-radius: var(--hero-download-btn-radius, 8px);
+  color: var(--hero-product-link-text, #26215C);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 3px 0 #CECBF6, 0 6px 10px rgba(108, 71, 255, 0.15);
+  transition: background 0.2s, transform 0.1s ease, box-shadow 0.1s ease;
+  box-sizing: border-box;
+}
+
+.hero-product-link:hover {
+  background: var(--hero-product-link-bg-hover, #E5E0FC);
+}
+
+.hero-product-link:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #CECBF6, 0 2px 4px rgba(108, 71, 255, 0.06);
+}
+
+.hero-product-link:focus {
+  outline: none;
+}
+
+.hero-product-link:focus-visible {
+  outline: 2px solid var(--hero-product-link-icon, #6C47FF);
+  outline-offset: 2px;
+}
+
+.hero-product-link-icon-wrap {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-2px);
+}
+
+.hero-product-link-icon {
+  flex-shrink: 0;
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+}
+
+/* Nudge glyph toward label — inline-start edge of icon box */
+[dir="rtl"] .hero-product-link-icon {
+  background-position: left center;
+}
+
+[dir="ltr"] .hero-product-link-icon {
+  background-position: right center;
+}
+
+.hero-product-link-icon-warehouse {
+  width: 18px;
+  height: 18px;
+  /* Warehouse art has more viewBox padding; scale up to match box visual weight */
+  background-size: 18px 18px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236C47FF' stroke-width='1.8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M3 21V8l9-4 9 4v13'/%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M13 13h4v8H7v-6h6'/%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M13 21v-9a1 1 0 00-1-1h-2a1 1 0 00-1 1v9'/%3E%3C/svg%3E");
+}
+
+.hero-product-link-icon-box {
+  width: 15px;
+  height: 15px;
+  background-size: 15px 15px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236C47FF' stroke-width='1.8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M12 3l8 4.5v9l-8 4.5-8-4.5v-9l8-4.5z'/%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M12 12l8-4.5'/%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M12 12v9'/%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M12 12L4 7.5'/%3E%3C/svg%3E");
 }
 
 /* App Store / Google Play badge style (like official download links) */
@@ -1630,6 +1769,7 @@ html:not([data-theme="dark"]) .theme-toggle-label-dark,
 .price-demo-tagline .lang-content.visible,
 .price-demo-live .lang-content.visible,
 .price-demo-btn .lang-content.visible,
+.hero-product-link .lang-content.visible,
 .auction-demo-live-pill .lang-content.visible,
 .auction-demo-name .lang-content.visible,
 .auction-demo-bid .lang-content.visible,
